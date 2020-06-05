@@ -1,4 +1,3 @@
 # Meteo_vue
 
-
-meteo-vue.jonathanfauchoux.now.sh
+https://meteo-vue.jonathanfauchoux.now.sh/
