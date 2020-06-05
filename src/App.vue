@@ -107,9 +107,7 @@ body {
   background-position: bottom;
   transition: 0.4s;
 }
-#app.warm {
-  background-color: red;
-}
+
 main {
   width: 100%;
   height: 100vh;
@@ -193,7 +191,7 @@ main {
   text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
   background-color: rgba(255, 255, 255, 0.25);
   border-radius: 16px;
-  margin: 5rem 0;
+  margin: 2rem 0;
   box-shadow: 3px 6px rgba(0, 0, 0, 0.25);
 }
 .weather-box .weather {
