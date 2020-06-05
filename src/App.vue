@@ -123,6 +123,8 @@ main {
     rgba(255, 255, 0, 0.25),
     rgba(0, 0, 0, 0.85)
   );
+ 
+  
 }
 .search-box {
   justify-self: start;
@@ -152,6 +154,9 @@ main {
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 16px 0px 16px 0px;
 }
+.location-box{
+  padding-bottom: 6rem;
+}
 .location-box .location {
   color: #FFF;
   font-size: 2.5rem;
@@ -159,7 +164,7 @@ main {
   text-align: center;
   text-shadow: 1px 3px rgba(0, 0, 0, 0.25);
 }
-.location-box .date {
+ .date {
   color: #FFF;
   font-size: 1.3rem;
   font-weight: 300;
@@ -209,4 +214,41 @@ main {
 .search-bar:focus::placeholder {
   color: transparent;
 }
+ @media screen and (min-width: 768px) and (max-width: 1024px) {
+    main{
+      justify-content: space-evenly;
+    }
+    .search-box .search-bar{
+      width: 80%;
+      padding: 1.2rem !important;
+      font-size: 1.5rem;
+    }
+    .location-box{
+      margin-top: -10rem;
+      padding-bottom: 10rem;;
+    }
+    .weather{
+      font-size: 3.9rem !important;
+      /*border: 1px solid red;*/
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    main{
+      justify-content: center;
+    }
+    .search-box .search-bar{
+      width: 80%;
+      padding: 1.2rem !important;
+      font-size: 1.5rem;
+    }
+    .location-box{
+      margin-top: 1rem;
+      padding-bottom: 10rem;;
+    }
+    .weather{
+      font-size: 3rem !important;
+      width: 88%;
+      /*border: 1px solid red;*/
+    }
+  }
 </style>
