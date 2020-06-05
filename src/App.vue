@@ -18,7 +18,7 @@
         </div>
 
         <div class="weather-box">
-          <div class="temp">{{ Math.round(weather.main.temp) }}°c</div>
+          <div class="temp">{{ Math.round(weather.main.temp) }}°</div>
           <div class="weather">{{ weather.weather[0].description }}</div>
         </div>
       </div>
@@ -40,6 +40,7 @@ export default {
   methods: {
     fetchWeather(e) {
       if (e.key === "Enter") {
+        this.weather= {}
         fetch(
           `${this.url_base}weather?q=${this.query}&units=metric&APPID=${
             this.api_key
@@ -49,6 +50,7 @@ export default {
             return res.json();
           })
           .then(this.setResults);
+          this.query = "";
       }
     },
     setResults(results) {
@@ -109,19 +111,21 @@ body {
   background-color: red;
 }
 main {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 5rem;
+  padding: 1.5rem;
   background-image: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.25),
-    rgba(0, 0, 0, 0.75)
+    rgba(255, 255, 0, 0.25),
+    rgba(0, 0, 0, 0.85)
   );
 }
 .search-box {
+  justify-self: start;
   width: 100%;
   margin-bottom: 2rem;
   display: flex;
@@ -129,7 +133,7 @@ main {
 }
 .search-box .search-bar {
   display: block;
-  width: 80%;
+  width: 100%;
   padding: 1rem;
 
   color: #313131;
@@ -150,27 +154,34 @@ main {
 }
 .location-box .location {
   color: #FFF;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: 500;
   text-align: center;
   text-shadow: 1px 3px rgba(0, 0, 0, 0.25);
 }
 .location-box .date {
   color: #FFF;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 300;
   font-style: italic;
   text-align: center;
 }
+.weather-wrap{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
 .weather-box {
   text-align: center;
+  width: 100%;
 }
 .weather-box .temp {
   display: inline-block;
   padding: 10px 25px;
   color: #FFF;
-
-  font-size: 102px;
+  white-space: nowrap;
+  font-size: 5rem;
   font-weight: 900;
   text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
   background-color: rgba(255, 255, 255, 0.25);
@@ -185,6 +196,11 @@ main {
   font-weight: 100;
   font-style: italic;
   text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  width: 100%;
+  padding: 1rem 0;
 }
 
 .search-bar::placeholder {
