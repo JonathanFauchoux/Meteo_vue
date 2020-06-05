@@ -155,9 +155,10 @@ main {
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 16px 0px 16px 0px;
 }
-.location-box{
+/*.location-box{
   padding-bottom: 6rem;
-}
+}*/
+
 .location-box .location {
   color: #FFF;
   font-size: 2.5rem;
